@@ -76,3 +76,61 @@ func izip <S:Sequence>(sequences:S...) -> zipSequence<S> {
     return zipSequence(sequences: sequences)
 }
 
+struct chainGenerator<S:Sequence, T where T == S.GeneratorType.Element> : Generator {
+    var sequences: [S]
+    var generators: [S.GeneratorType]
+    
+    init(sequences:[S]) {
+        self.sequences = sequences
+        self.generators = []
+        for s in sequences {
+            self.generators.append(s.generate())
+        }
+    }
+    
+    mutating func next () -> T? {
+        var not_empty = true
+        var index = 0
+        while not_empty {
+            let n = self.generators[index].next()
+            if n {
+                return n
+            } else {
+                index += 1
+                if index == self.generators.count {
+                    not_empty = false
+                    return nil
+                }
+            }
+        }
+        return nil
+    }
+}
+
+struct chainSequence<S:Sequence>: Sequence {
+    var sequences: [S]
+    func generate() -> chainGenerator<S, S.GeneratorType.Element> {
+        return chainGenerator(sequences: self.sequences)
+    }
+}
+
+func chain <S:Sequence>(sequences:S...) -> chainSequence<S> {
+    return chainSequence(sequences: sequences)
+}
+
+func groupby () {
+    
+}
+
+func tee () {
+    
+}
+
+func combinations () {
+    
+}
+
+func permutations () {
+    
+}
+
