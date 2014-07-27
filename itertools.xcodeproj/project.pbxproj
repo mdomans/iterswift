@@ -10,6 +10,8 @@
 		A24F967D1983FAE100E4FDAC /* itertools.h in Headers */ = {isa = PBXBuildFile; fileRef = A24F967C1983FAE100E4FDAC /* itertools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A24F96831983FAE100E4FDAC /* itertools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24F96771983FAE100E4FDAC /* itertools.framework */; };
 		A24F968A1983FAE100E4FDAC /* itertoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F96891983FAE100E4FDAC /* itertoolsTests.swift */; };
+		A24F96951983FE1300E4FDAC /* itertools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F96941983FE1300E4FDAC /* itertools.swift */; };
+		A24F96961983FE1300E4FDAC /* itertools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F96941983FE1300E4FDAC /* itertools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		A24F96821983FAE100E4FDAC /* itertoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = itertoolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24F96881983FAE100E4FDAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A24F96891983FAE100E4FDAC /* itertoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itertoolsTests.swift; sourceTree = "<group>"; };
+		A24F96931983FC7400E4FDAC /* itertools.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = itertools.playground; path = itertools/itertools.playground; sourceTree = "<group>"; };
+		A24F96941983FE1300E4FDAC /* itertools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itertools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 		A24F966D1983FAE100E4FDAC = {
 			isa = PBXGroup;
 			children = (
+				A24F96931983FC7400E4FDAC /* itertools.playground */,
 				A24F96791983FAE100E4FDAC /* itertools */,
 				A24F96861983FAE100E4FDAC /* itertoolsTests */,
 				A24F96781983FAE100E4FDAC /* Products */,
@@ -73,6 +78,7 @@
 			children = (
 				A24F967C1983FAE100E4FDAC /* itertools.h */,
 				A24F967A1983FAE100E4FDAC /* Supporting Files */,
+				A24F96941983FE1300E4FDAC /* itertools.swift */,
 			);
 			path = itertools;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A24F96951983FE1300E4FDAC /* itertools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A24F968A1983FAE100E4FDAC /* itertoolsTests.swift in Sources */,
+				A24F96961983FE1300E4FDAC /* itertools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +328,7 @@
 		A24F968E1983FAE100E4FDAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -329,12 +338,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A24F968F1983FAE100E4FDAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

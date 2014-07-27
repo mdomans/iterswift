@@ -33,4 +33,16 @@ class itertoolsTests: XCTestCase {
         }
     }
     
+    func testCycle () {
+//        for x  in cycle(["a", "b"]) {
+//            println(x)
+//        }
+    }
+    
+    func testZip () {
+        for x in izip(["a", "b"], ["c","d"], ["e", "f"]) {
+            println(x)
+        }
+    }
+    
 }
